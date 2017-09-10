@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 不同行
+		// var table = '<table border="1px" cellspacing="0">';
+		// for (var i = 0; i < 11; i++) {
+		//     if (i%2==1) {k='red';} else {k='green';}
+		// 	table += '<tr style="background:'+k+'	;">'
+		// 	for (var j = 0; j <= i; j++) {
+		// 		table += '<td>'+i+'*'+j+'='+i*j+'</td>'
+		// 	}
+		// 	table += '</tr>'
+		// }
+		// document.write(table);
+// 三角形
+    // function jinzita(x){
+    // for (var i = 1; i <=x; i++) {
+    // 	for (var k = 1; k <= x-i; k++) {
+    //     		document.write('-')
+    //     	}
+    //     for (var j = 1; j <= 2*i-1; j++) {
+    //    	document.write('*')
+    //     } 	
+    //     document.write( '</br>' );
+    // }
+    // }
+    // jinzita(9)
+//倒三角写完了
+    // var l = prompt('你想弄几行？', 10)
+    // for (var i = l; i > 0; i--) {
+    // 	for (var k = 1; k <=l-i; k++) {
+    //     		document.write('-')
+    //     	}
+    //     for (var j = 1; j <= 2*i-1; j++) {
+    //    	document.write('*')
+    //     } 	
+    //     document.write( '</br>' );
+    // }
+//1 1 2 3 5 8 13 21 34 55 89 
+    // var i = 1;j = 1;
+    // for (var k = 0; k <=100;) {
+    //     k = i + j;
+    //     i = j;
+    //     j = k;
+    //     if(k <= 100){
+    //     	 document.write(k + '&nbsp');
+    //     }
+    // }
+//最大值
+    //var arr = [9,18,71,6,3,4,52,524,5,2432],max = arr[0];
+    // for (var i = 0; i < arr.length; i++) {
+    	
+    // 	if (max < arr[i]) {
+    //         max = arr[i];
+    // 	} 
+    // }
+    // console.log(max);
+//大小排序
+    // for (var i = 0; i < arr.length; i++) {
+    // 	for (var j = i + 1; j < arr.length; j++) {
+    // 		if (arr[i] < arr[j]) {
+    // 		temp = arr[i];
+    // 		arr[i] = arr[j];
+    // 		arr[j] = temp;	
+    // 		} 
+    // 	}
+    // }	
+    // console.log(arr);
+//while
+    // var sum = 0;
+    // var i = 1;
+    // while(i <= 10){
+    //     sum = sum + i;
+    //     i++;
+    // }
+    // alert(sum)
+//跳出当前循环
+    // for (var i = 0; i <10; i++) {
+    // if (i%2==1) {
+    // 	continue;
+    // 	break;
+    // }
+    // console.log(i);
+    // }
+//去掉数组中的空字符
+//打包去掉数组中的空字符  
+    // function qukong(arr){
+    // var newarr = [];
+    // for(var i = 0;i<arr.length;i++){
+    //     if(arr[i]==undefined){
+    // 	    continue;   
+    //     }
+    // newarr[newarr.length] = arr[i];
+    // }
+    // console.log(newarr);}
+    // // 测试
+    // var arr1 = [1,2,3,,4,5,6,,7,8];
+    // qukong(arr1)
+//选择二维数组中的最大值
+      
+//打包最大值最小值
+    // function maxmin(warr){
+    // var max = warr[0][0];
+    // var min = warr[0][0];
+    // for (var i = 0; i < warr.length; i++) {
+    // 	//class[i]
+    // 	for (var j = 0; j < warr[i].length; j++) {
+    // 		//class[i][j]
+    // 		if (max < warr[i][j]){
+    // 			max = warr[i][j];
+    // 		}
+    // 		if (min > warr[i][j]){
+    // 			min = warr[i][j];
+    // 		} 
+    // 	}
+    // }
+    // console.log(max);
+    // console.log(min);
+    //  }
+    //  var warr1 = [[12,34,67],
+    //               [23,64,94],
+    //               [34,67,92]];
+    // // 测试
+    // maxmin(warr1)
+
+	    // var sddd = function (){
+	    //   alert(1);
+	    // }
+	    // sddd()
+//判断有无
+    // var arr = [2,3,141,51,3,1]
+    // function exsit(arr,value){
+    // 	for (var i = 0; i < arr.length; i++) {
+    // 		if(arr[i] != value){
+    //             continue;
+    // 		}else{
+    //            alert(true)
+    // 		}
+    // 	}
+    // }
+    // exsit(arr,4)
+//数组增加数 
+    // var arr = [1,2,3,4,5,6,7,8];
+    // function push(arr){
+    // 	console.log(arguments);
+    //    for (var i = 1; i < arguments.length; i++) {
+    //        arr[arr.length] = arguments[i];
+    //    }
+    //    console.log(arr);
+    // }
+    // push(arr,11,12,13,14);
+//动态赋值   默认值写在最后
+// 1    type = type == undefined ? '<' : type ;
+// 2    type = type || '<';
+// 3    if (type = '<') {
+//     	sortUP()
+//     }else if(type = '>'){
+//     	sortDOWN();
+//     }else {
+//     	type = '<'
+//     }
+// 4   ES6中  function sourt(arr,type = '<'){}
+//        只有当实参为undefined时，形参依旧为默认值
+// 5   push(arr,1,2,3,4);
+//     function push(arr,...value){
+//     	console.log(value)//value 会把多余的实参变成数组
+//     }
+
+//return
+    // return 2作用 在调用的地方给一个返回值;
+    // //          终止函数的运行
+             // function fn(){
+             //    alert(1);
+             // 	return 1,2,3;
+             // }
+             // // fn();
+             // console.log(fn())
+             // 判断某一个数组存在特定值，存在 true false;
+              var arr = [1,2,3,4,5,6]
+             function exist(arr,value){
+             	for (var i = 0; i < arr.length; i++) {
+             		// if (value == object ) {}
+             		if (arr[i] == value) {
+             			return true;
+             		}
+             			 		
+             	}
+             	return false;
+             }
+             console.log(exist(arr,51))
+// 数组转换成字符串
+// arr:数组
+// str:连接符号
+    var arr = [1,2,3,4,5,6]
+
+    function chuan(arr,str ='-'){
+    	var restle = '';
+    	for (var i = 0; i < arr.length;i++) {
+    		if (i < arr.length-1) {
+    			newarr = arr[i] + str
+    		restle = restle + newarr
+    	}else{
+    		restle +=arr[i]
+    	}
+    		
+    	}
+    	return restle;
+    	}
+    console.log(chuan(arr,'-'))
+// 数组里面偶数的数组元素
+// arr:数组
+  var arr = [1,2,3,4,5,6,1,2,3,4,5,6,7,8,9,0]
+      function quou(arr){
+      	var  newarrr = [];
+         for (var i = 0; i < arr.length; i++) {
+         	if(arr[i]%2 == 0) {
+                newarrr[newarrr.length] = arr[i]
+         	}
+         }
+        // console.log(newarrr) 
+        return newarrr;
+      } 
+      // quou(arr) 
+    console.log(quou(arr))
+
+    // var rt = 10;
+    // function ert(){
+    // 	alert(rt);
+    // 	rt = 5;
+    // 	tt(4)
+    // 	function tt(rt){
+    // 		alert(rt)
+    // 	}
+    // }
+    // ert()
+    //
+	</script>
+</body>
+</html>

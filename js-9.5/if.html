@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+// 多分支
+	// var score = prompt('请输入你的成绩',60);
+ //   	if(score >= 90 && score <=100){
+ //   		alert('优秀');
+ //   	}else if(score >= 80 && score <90){
+ //   		alert('良好');
+ //   	}else if(score >= 70 && score <80){
+ //   		alert('中等');
+ //   	}else if(score >= 60 && score <70){
+ //   		alert('及格');
+ //   	}else if(score >= 0 && score <60){
+ //   		alert('不及格');
+ //   	}else{
+ //   		alert('你吃屎了？输的是什么？');
+ //   	}
+       /*单分支*/
+       // var num = 58;
+       // if(num > 0){
+       // 	alert(1)
+       // }
+       /*双分支*/
+       // var num = prompt('请输入你的名字',60);
+       // if(num%2 == 1){
+       // 	alert('奇数');
+       // }else{
+       // 	alert('偶数');
+       // }
+       /*娱乐*/
+       // var num = prompt('请输入你的名字','张泽浩');
+       // if(num == '张泽浩' || '董致诚'){
+       // 	alert('帅哥');
+       // }else{
+       // 	alert('傻逼');
+       // }
+       /*while100循环*/ 
+       // var i = 0;
+       // while (i < 100) {
+       // console.log('i当前为：' + i);
+       // i += 1;
+       // }while(i >= 100){
+       // 	console.log('i终于抵达' + i);
+       // 	i -= 1;
+       // }
+       /*无限循环*/ 
+//        while (true) {
+//   console.log('Hello, world');
+// }
+       /*switch语句*/
+       // var week = prompt('请输入星期',1);
+       // week =Number(week)
+       // alert(typeof week);
+       // switch(week){
+       // 	case 1 :
+       // 	alert('一组');
+       // 	break;
+       // 	case 2 :
+       // 	alert('二组');
+       // 	break;
+       // 	case 3 :
+       // 	alert('三组');
+       // 	break;
+       // 	case 4 :
+       // 	alert('四组');
+       // 	break;
+       // 	case 5 :
+       // 	alert('五组');
+       // 	break;
+       // 	case 6 :
+       // 	alert('六组');
+       // 	break;
+       // 	case 7 :
+       // 	alert('七组');
+       // 	default:
+       // 	alert('输入错误')
+       // }
+       /*重复十次*/
+       // var sum = 0;
+       // for(var i = 1;i <= 10;i++){
+       // 	if (i%2==0) {
+       // 		sum += i;
+       // 	}
+       // }
+       // 	alert(sum);
+       /*点点点*/
+       // for (var j = 0; j <11; j++) {
+       // for (var i = 0; i < j; i++) {
+       // 	document.write('*')
+       // } 	
+       // document.write( '</br>' );
+       // }
+       /*乘法表不同列*/
+       document.write('<table border="1px" cellspacing="0" cellpadding="10px" >')
+
+       for(var i = 1;i <= 9;i++){
+       	document.write('<tr>')
+
+       	for (var j = 1; j <= i; j++) {
+       			
+       		if (j%2==1) {document.write('<td  style="background:green;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		}else{
+                document.write('<td style="background:red;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		}   		
+       	}
+       	document.write('</tr>')
+       }
+       document.write('</table>')
+       /*乘法表不同行*/
+
+
+       document.write('<table border="1px" cellspacing="0" cellpadding="10px" >')
+       for(var i = 1;i <= 9;i++){
+         if (i%2==1) {
+         	document.write('<tr style="background:skyblue;">')
+            for (var j = 1; j <= i; j++) {
+       		    document.write('<td>'+i+'*'+j+'='+(i*j)+'</td>')		  		
+       	}
+       	    document.write('</tr>')
+         }else{
+         	document.write('<tr style="background:blue;">')
+            for (var j = 1; j <= i; j++) {
+       		    document.write('<td>'+i+'*'+j+'='+(i*j)+'</td>')		  		
+       	}
+       	    document.write('</tr>')
+         }
+       }
+       document.write('</table>')
+
+
+       /*乘法表不同行不同列*/
+       document.write('<table border="1px" cellspacing="0" cellpadding="10px" >')
+       for(var i = 1;i <= 9;i++){
+         if (i%2==1) {
+         	document.write('<tr style="background:skyblue;">')
+            for (var j = 1; j <= i; j++) {
+       		    if (j%2==1) {document.write('<td  style="color:green;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		}else{
+                document.write('<td style="color:red;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		} 		  		
+       	}
+       	    document.write('</tr>')
+         }else{
+         	document.write('<tr style="background:blue;">')
+            for (var j = 1; j <= i; j++) {
+       		    if (j%2==1) {document.write('<td  style="color:green;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		}else{
+                document.write('<td style="color:red;">'+i+'*'+j+'='+(i*j)+'</td>')
+       		} 		  		
+       	}
+       	    document.write('</tr>')
+         }
+       }
+       document.write('</table>')
+
+       // 不同行
+       document.write('<table border="1px" cellspacing="0" cellpadding="10px" >')
+       for(var i = 1;i <= 9;i++){
+         if (i%2==1) {
+         	document.write('<tr style="background:skyblue;">')
+         }else{
+         	document.write('<tr style="background:blue;">')		  		
+       	}
+       	 for (var j = 1; j <= i; j++) {
+       		    document.write('<td>'+i+'*'+j+'='+(i*j)+'</td>')
+       	    
+         }
+         document.write('</tr>')
+       }
+       document.write('</table>')
+</script>
