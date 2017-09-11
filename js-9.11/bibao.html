@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+    function fn(){
+    	var num = 10;
+    	return fn1;
+    	function fn1(){
+    		num++;
+    		// alert(num);
+    		return num;
+    	}
+    }
+    alert(fn()())
+    // var result = fn();
+    // alert(result());
+</script>
