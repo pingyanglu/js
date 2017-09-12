@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+</head>
+<body>
+	<script>
+		class Student{
+        	constructor(){
+        		this.name = 'zhe'
+        		this.age = '13'
+        		this.sex = 'nv'
+        		this.say = function(){
+        			alert(1);
+        		}
+        	}
+        	study(){
+        		alert('学习');
+        	}	
+        }        
+        let zhangsan = new Student;
+        console.log(zhangsan.study())
+
+        class iPhone{
+        	constructor(name,size,color){
+        		this.name = name
+        		this.size = size
+        		this.color = color
+        		this.say = function(){
+        			alert(this.name);
+        		}
+        	}
+        	study(){
+        		alert('samsung will boom');
+        	}	
+        }        
+        let iPhone8 = new iPhone;
+        console.log(iPhone8.study())
+	</script>
+</body>
+</html>

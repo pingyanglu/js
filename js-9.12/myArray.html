@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray</title>
+</head>
+<body>  
+    <!-- indexof some every map filter lastindexof includes reverse join  -->
+	<script>
+		function myArray(){
+			for (let i = 0; i < arguments.length; i++) {
+				this[i] = arguments[i]
+			}
+            this.length = arguments.length;
+            this.push = function(){
+            	for (let i = 0; i < arguments.length; i++) {
+            		this[this.length] = arguments[i]
+                    this.length++;
+            	}
+            }
+            this.some = function(fn){
+            	for (let i = 0; i < this.length; i++) {
+            		if (fn(this[i])) {
+            			return true;
+            		}
+            	}
+            	return false;
+            }
+            this.every = function every(fn){
+    	        for (var i = 0; i < this.length; i++) {
+    		        if(!fn(this[i])){
+    			        return false
+    		        }
+    	        }
+    	        return true;
+            }
+            this.indexOf = function(value){
+            	for (let i = 0; i < this.length; i++) {
+            		if (this[i] == value) {
+            			return true;
+            		}
+            	}
+            	return false;
+            }
+            this.map = function(fn){
+            	var newarr = [];
+    	        for (var i = 0; i < this.length; i++) {
+    		        newarr[newarr.length] = fn(this[i])
+    	        }
+    	        return newarr
+            }
+            this.filter = function(fn){
+            	var newarr = [];
+    	        for (var i = 0; i < this.length; i++) {
+    		        if(fn(this[i])){
+    			        newarr[newarr.length] = this[i];
+    	        }}
+    	        return newarr;
+            }
+            this.reverse =function(){
+		        var newarr = [];
+                for (var i = this.length-1; i > -1; i--) {
+        	        newarr[newarr.length] = this[i];
+                }
+                return newarr;
+	        }
+		}
+		let myArr = new myArray('a','b','c',12,3,4,5,6,7,8,90);
+		
+		let some1 = myArr.some(function(value){
+			return typeof value == 'number '/*value < 0*/;
+		})
+		let indexOf1 = myArr.indexOf(31)
+		let every1 =  myArr.every(function(value){
+			return value !== NaN;
+		})
+		let map1 = myArr.map(function(value){
+			return value*2
+		})
+		let filter1 = myArr.filter(function(value){
+			return value%2 == 0
+		})
+		let reverse1 = myArr.reverse()
+		myArr.push('x','y','z')
+		console.log(myArr)
+        console.log(some1)
+		console.log(indexOf1)
+		console.log(every1)
+		console.log(map1)
+		console.log(filter1)
+		console.log(reverse1)
+	</script>
+</body>
+</html>

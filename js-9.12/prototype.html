@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+		 function iPhone(brand,data,price,CPU,say){
+        	this.brand = brand;
+        	this.data = data;
+        	this.price = price;
+        	this.CPU = CPU;
+        	this.size = ``
+        	this.say = function(say){
+        		alert(say);
+        	}
+        	this.study = function(){
+        		alert(this.brand);
+        	}
+        	this.speech = function(say){
+        		this.say(say);
+        	}
+        }
+        let iPhone8 = new iPhone("iPhone8",'2017.9.12',8888,'苹果A11')
+        console.log(iPhone8)
+        iPhone8.speech(666)
+	</script>
+</body>
+</html>
