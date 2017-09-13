@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+</head>
+<body>
+	<script>
+		let str = 'ab张三cd'
+		console.log(str.length)
+		console.log(str.charAt(4))
+		console.log(str.charCodeAt(4))
+		console.log(String.fromCharCode(99))
+		console.log(str.indexOf('cd'))
+		console.log(str.lastIndexOf('cde'))
+		console.log(str.includes('cd'))
+		console.log(str.includes('cde'))
+		console.log(str.slice(0,4))
+		console.log(str.slice(0,-1))
+		console.log(str.slice(2))
+		console.log(str.substring(0,4))
+		console.log(str.substring(0,-1))//不识别负数
+		console.log(str.substring(2))
+		console.log(str.substr(2,3))
+		console.log(str.replace('ab',12))
+		let result = str.match('ab')
+		console.log(str.match('ab'))
+		let strr = '    asdczcas  '
+		console.log(strr.trim())
+		let arr = 'a-b-c-d'
+		console.log(arr.split('-',3))
+		console.log(str.toUpperCase())
+		console.log(str.toLowerCase())
+		let url = 'https//:www.baidu.comhttps//:www.baidu.comhttps//:www.baidu.comhttps//:www.baidu.comhttps//:www.baidu.comhttps//:www.baidu.com';
+		console.log(url.indexOf('baidu'))
+		function indexof(arr,rArr){
+			let arrd = [];
+			while(arr.indexOf(rArr) != -1){
+			arrd.push(arr.indexOf(rArr))
+				arr = arr.replace(rArr,"*****")
+			}
+			return arrd;
+		}
+		console.log(indexof(url,'baidu'))
+		function Substr(arr,rArr){
+			let newarr = [];
+			for (let i = 0; i < arr.length; i++) {
+				if(arr.substr(i,5) == 'baidu'){
+					newarr.push(i)
+				}
+			}
+			return newarr;
+		}
+		console.log(Substr(url,'baidu'))
+		//document.write(str.fontcolor('red'))
+		//document.write(str.fontsize(20))
+//		
+		// function repelaceAll(str,rStr){
+		// 	/*let result = ''
+		// 	for (var i = 0; i < rStr.length; i++) {
+		// 		result += '*'
+		// 	}*/
+		// 	let result = "*".repeat(rStr.length)
+		// 	while(str.includes(rStr)){
+		// 		str = str.replace(rStr,result)
+		// 	}
+		// 	return str;
+		// }
+		// console.log(repelaceAll(str,"ab张"))
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray9.13</title>
+</head>
+<body>
+	<script>
+		class myArray{
+			constructor(){
+				for (let i = 0; i < arguments.length; i++) {
+				this[i] = arguments[i]
+			}
+            this.length = arguments.length;
+            this.push = function(){
+            	for (let i = 0; i < arguments.length; i++) {
+            		this[this.length] = arguments[i]
+                    this.length++;
+            	}
+            }
+            this.delNull = function(){
+            	let newarr = new myArray();
+            	for (let i = 0; i < this.length; i++) {
+            		if(this[i] != undefined){
+            			newarr.push(this[i]);
+            		}
+            	}
+            	return newarr;
+            }
+            this.map = function(fn){
+            	let newarr = new myArray;
+            	for (let i = 0; i < this.length; i++) {
+            		if (typeof this[i] == 'number') {
+            	    newarr.push(fn(this[i]))
+            	}
+            	}
+            	return newarr
+            }
+			}
+		}
+		let lisi = new Object{
+			name = 23;
+		}
+		alert(lisi)
+		let arr = new myArray;
+		arr.push(1,2,3,4,undefined)
+		console.log(arr.delNull())
+		console.log(arr)
+		console.log(arr.map(function(value){
+			return value*2
+		}))
+	</script>
+</body>
+</html>

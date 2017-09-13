@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name = 'zhangsan';
+			this.age = 13;
+			this.sex = 'nv'
+			this.eat = function(){
+				alert('eat')
+			}
+		}
+        function Student(){
+        	this.num = 1234;
+        }
+        Student.prototype = new Person();
+        Student.prototype.aa = function(){
+        	alert(1)};
+        let zhangsan = new Person();
+        let lisi = new Student();
+        
+        
+        // console.log(lisi.aa())
+        console.log(lisi)
+        console.log(lisi.__proto__)
+        console.log(Student.prototype)
+        console.log(lisi.__proto__ == Student.prototype)
+        console.log(Student.prototype.__proto__)
+        console.log(Person.prototype)
+        console.log(Student.prototype.__proto__ == Person.prototype)
+        console.log(Person.prototype.__proto__)
+        console.log(Object.prototype)
+        console.log(Person.prototype.__proto__ == Object.prototype)
+        console.log(Object.prototype.__proto__)
+
+	</script>
+</body>
+</html>
