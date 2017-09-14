@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9.14</title>
+</head>
+<body>
+	<script>
+/*		let arr = new Array('a','b','c','d')
+		let arr1 = [23,45,67]
+        arr.push(4,5,6)
+        console.log(arr)
+        arr.unshift(1,2,3)
+        console.log(arr)
+        // arr.pop()
+        // console.log(arr)
+
+        // arr.shift()
+        // console.log(arr)
+        arr.splice(1,2)
+        console.log(arr)
+        arr.splice(1,0,2,3)
+        console.log(arr)
+        
+        // arr.push(...arr1)
+        // console.log(arr)
+        let newarr = arr.concat(...arr1)
+        console.log(newarr)
+        let a = arr.sort(arr)
+        console.log(a)
+        // arr.sort(a,b)*/
+        Array.prototype.delRepeat = function(){
+        	let newstr = [];
+        	for (let i = 0; i < this.length; i++) {
+            	if (newstr.includes(this[i])==false) {
+            		newstr.push(this[i])
+            	}
+            } 
+            return newstr;
+        } 
+        let str = [1,2,3,4,5,6,1,2,3,4]
+        console.log(str.delRepeat())
+        function delRepeat(str){
+        	let newstr = [];
+        	for (let i = 0; i < str.length; i++) {
+            	if (newstr.includes(str[i])==false) {
+            		newstr.push(str[i])
+            	}
+            }
+            return newstr;
+        } 
+
+        console.log(delRepeat(str))
+        function delRepeat1(str){
+        	let newstr = [];
+        	for (let i = 0; i < str.length; i++) {
+            	if (str.slice(i+1).includes(str[i])==false) {
+            		newstr.push(str[i])
+            	}
+            }
+            return newstr; 
+        }  
+        console.log(delRepeat1(str))     
+       /* for (let i = 0; i < str.length; i++) {
+        	if (newstr.includes(str[i])==false) {
+        		newstr.push(str[i])
+        	}
+        }*/
+        // str.forEach(newstr.push(...str))
+        /*for (let i = 0; i < str.length; i++) {
+        	if (str.slice(i+1).includes(str[i])==false) {
+        		newstr.push(str[i])
+        	}
+        } */
+        function delRepeat2(str){
+        	let newstr = [];
+        	for (let i = 0; i < str.length; i++) {
+            	let flag = true;
+            	for (let j = i+1; j < str.length; j++) {
+            		if(str[i] == str[j]){
+            			flag = false;
+            			break;
+            		}
+            	}
+            	if (flag) {
+            		newstr.push(str[i])
+            	}
+            }
+            return newstr; 
+        }  
+        console.log(delRepeat2(str))     
+        
+
+	</script>
+</body>
+</html>

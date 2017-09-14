@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+<body>
+	<script>
+		console.log(Math.round(-10.4))
+		console.log(Math.round(-10.5))
+		console.log(Math.round(-10.8))
+		console.log(Math.round(10.3))
+		console.log(Math.round(10.5))
+		console.log(Math.round(10.8))
+		console.log(Math.floor(10.8))
+		for (var i = 0;i <10 ;i++) {
+			console.log(Math.random()*100)
+		}
+		console.log(Math.sqrt(9))
+
+		// console.log(rab(Math.round(Math.random()*255),Math.round(Math.random()*255),Math.round(Math.random()*255)))
+		let arr = ['a','b','c','d','e']
+		function Random(arr,num){
+			let newarr = [];
+			let newarr1 = [];
+		while (newarr.length < num) {
+			let j = Math.floor(Math.random()*arr.length)
+			if(!newarr.includes(j)){
+				newarr.push(j)
+			}
+		}
+		for (let i = 0; i < num; i++) {
+			newarr1.push(arr[newarr[i]])
+		}
+		console.log(newarr)
+		return newarr1;
+		}
+	    console.log(Random(arr,3))
+
+
+
+
+
+
+
+
+	    function Random1(arr,num){
+	    	let newarr = new Array;
+	    	while(newarr.length<num){
+	    		let j = arr[Math.floor(Math.random()*arr.length)]
+	    		if(!newarr.includes(j)){
+	    			newarr.push(j)
+	    		}
+	    	}
+	    	return newarr;
+	    }
+	    console.log(Random1(arr,5))
+	</script>
+</body>
+</html>
