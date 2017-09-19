@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lianxi</title>
+</head>
+<body>
+	<script>
+/*循环三次停止*/ 
+/*    // var oDiv = document.getElementById('div1');
+    var fn =  function(){
+        alert(1)    
+        nLeft++;
+        if(nLeft == 3)    
+        {    
+            window.clearInterval(timer);    //清除定时器
+        }  
+         }   
+    var nLeft = 0;    
+    var timer = setInterval(fn,1000 )   
+        // document.title=nLeft;    */
+          
+     function table(num){
+     	alert(typeof num)
+     	num = num == undefined ? 10 : num;
+     	document.write('<table border=1 cellspacing=0>')
+     	for (var i = 1; i <=num; i++) {
+     		if (i%2 ==1) {
+     			 u = 'red';
+     		}else{
+     			 u = 'green';
+
+     		}
+     		document.write('<tr style="background:'+u+'">')
+     		for (var j = 1; j <= i; j++) {
+     			document.write('<td>'+i+'*'+j+'</td>')
+
+     		}
+     	
+     	// document.write('</td>')
+     	document.write('</tr>')
+     	}
+     	
+     	document.write('</table>')
+     }
+    let a = table()
+
+	</script>
+</body>
+</html>

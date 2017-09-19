@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history</title>
+	<style>
+		button{border:none;
+			border-style: none;
+			width: 60px;
+			height: 30px;
+			font-size: 16px;
+
+		}
+	</style>
+</head>
+<body>
+	<h1><a href="history1.html">这是history</a></h1>
+	<button id = 'forward'>前进</button>
+	<button id = 'back'>后退</button>
+	<button id = 'refresh'>刷新</button>
+	<script>
+		console.log(history.length)
+		let forward1 = document.getElementById('forward');
+		let back1 = document.getElementById('back');
+		let refresh1 = document.getElementById('refresh');
+		forward.onclick = function(){
+			history.forward();
+		}
+		back.onclick = function(){
+			history.back();
+		}
+		refresh.onclick = function(){
+			history.go(0)
+		}
+		/*
+		location.pathname 路径
+		location.search ?name=zhangsan&age=18
+		location.hash 对应某一个锚点
+		location.protol  协议
+		location.host  主机
+		location.hostname 主机名
+		location.port
+		location.href  跳到某地址
+		location.pathname  /s
+		location.assign()  跳转页面location.assign('www.baidu.com')
+		location.reload()  重新加载=刷新;location.reload(true)绕过本地,location.reload(false)或不写,利用本地缓存;
+		location.repleace() 新的网页去替换当前页面  没有历史记录  登录密码安全
+
+		 */
+	</script>
+</body>
+</html>

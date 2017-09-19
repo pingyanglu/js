@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loginno</title>
+	<link rel="stylesheet" href="css/loginno.css">
+</head>
+<body>
+	<div class="big">
+		<p><span id='time'>5</span>s后返回...</p>
+	</div>
+</body>
+</html>
+<script>
+	let time = document.getElementById('time');
+	var fn = function(){
+		time.innerText -= 1;
+		if(time.innerText <= 0){
+			window.clearInterval(t);
+		}
+	};
+	let t = window.setInterval(,1000);
+</script>

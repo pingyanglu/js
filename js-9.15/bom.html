@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bom</title>
+</head>
+<body>
+	<script>
+	/*alert(window.innerWidth)	//可视视口  内容的
+	alert(window.outerWidth)	//可视视口  整个浏览器的
+	alert(window.innerHeight)	
+	alert(document.documentElement.clientWidth) //文档对象客户端的宽度（内容）兼容
+	alert(document.documentElement.clientHeight) //文档对象客户端的高度（内容兼容
+	alert(window == self)*/
+	/*moveTo(100, 50)//移动到坐标点      一次
+	moveBy(200, 100)//移动这么多坐标   多次
+	window.setInterval(function(){
+		alert(1);
+	},100)//每隔多少毫秒（1s==1000毫秒）执行一次回调函数*/
+	
+	var fn = function(){
+		alert(1);
+		setTimeout(fn,1000)
+	};
+	// window.setInterval(fn,1000);
+	let t = window.setInterval(fn,1000);
+	let a = window.clearInterval(t);
+
+	var fn1 = function(){
+		alert(1);
+		setTimeout(fn,1000)
+	};
+	let x = setTimeout(fn1,1000);//setTimeout()模拟setInterval()   递归
+
+	window.clearTimeout(x);
+	let flag = confirm('确定退出吗')
+	alert(flag)
+	// open()//打开新窗口
+	// close()
+	</script>
+</body>
+</html>

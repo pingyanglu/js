@@ -1,0 +1,27 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: "微软雅黑","宋体","sans-serif";
+	text-decoration: none;
+}
+a{
+	color: #000;
+}
+body{
+	background: rgba(0, 0, 0, 0.5)
+}
+.big{
+	width: 300px;
+	height: 180px;
+	background: #fff;
+	border-radius: 3px;
+	margin:10px  auto ;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	text-align: center;
+}
+span{
+	color: skyblue;
+	font-size: 20px;
+}

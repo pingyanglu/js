@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history</title>
+	<style>
+		button{border:none;
+			border-style: none;
+			width: 60px;
+			height: 30px;
+			font-size: 16px;
+
+		}
+	</style>
+</head>
+<body>
+	<h1><a href="history.html">这是history1</a></h1>
+	<button id = 'forward'>前进</button>
+	<button id = 'back'>后退</button>
+	<button id = 'refresh'>刷新</button>
+	<script>
+		console.log(history.length)
+		let forward1 = document.getElementById('forward');
+		let back1 = document.getElementById('back');
+		let refresh1 = document.getElementById('refresh');
+		forward.onclick = function(){
+			history.go(1);
+		}
+		back.onclick = function(){
+			history.go(-1);
+		}
+		refresh.onclick = function(){
+			history.go(0)
+		}
+		
+	</script>
+</body>
+</html>
