@@ -343,6 +343,7 @@ aside main{
 	height: 100%;
 	background:red;
 	position: relative;
+	overflow: hidden;
 }
 .banner-box li a{
 	display: block;
@@ -355,8 +356,7 @@ aside main{
 	background: blue;
 	position: absolute;
 	top: 0;
-	left: 0;
-	display: none;
+	left: 1190px;
 	text-align: center;
 	font-size: 25px;
 	line-height: 500px;
@@ -366,6 +366,7 @@ aside main{
 }
 .banner-box li:first-child{
 	display: block;
+	left: 0;
 }
 .banner-box li img{
 	display: inline-block;

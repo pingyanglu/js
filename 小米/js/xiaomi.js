@@ -22,17 +22,78 @@ window.onload = function(){
 	console.log(mains)
 	let jiantouL = $('.jiantou-left')[0];
 	let jiantouR = $('.jiantou-right')[0];
+	let imgW = parseInt(window.getComputedStyle(bannerBox,null).width);
+	let now = 0;
+	let next = 0;
+	let flag = true;
 /////////////////////////////////
 	let num = 0;
-	let t = setInterval(move,1000)
+	let t = setInterval(move,3000)
 
 	mains.onmouseover = function(){
 		clearInterval(t);
 	}
 	mains.onmouseout = function(){
-		t = setInterval(move,1000)
+		t = setInterval(move,3000)
+	}
+	jiantouL.onclick = function(){
+		if(!flag){
+			return
+		}
+		moveL()
+		flag = false;
+	}
+	jiantouR.onclick = function(){
+		if(!flag){
+			return
+		}
+		move()
+		flag = false;
+	}
+	console.log(byuanlis)
+	for (let i = 0; i < byuanlis.length; i++) {
+		byuanlis[i].onclick = function(){
+			if(now == i){return}
+			byuanlis[now].style.background = 'rgba(23, 23, 28, 0.5)';
+			byuanlis[i].style.background = 'rgba(225, 225, 225, 0.5)';
+			bannerlis[i].style.left = imgW+'px';
+			animate(bannerlis[now],{left:-imgW});
+			animate(bannerlis[i],{left:0});
+			now =next = i;
+		}
 	}
 	function move(){
+		next++
+		if (next == bannerlis.length) {
+			next = 0;
+		} 
+		for (let i = 0; i < byuanlis.length; i++) {
+			byuanlis[i].style.background = 'rgba(23, 23, 28, 0.5)';
+		}
+		console.log(now)
+		byuanlis[next].style.background = 'rgba(225, 225, 225, 0.5)';
+		bannerlis[next].style.left = imgW+'px';
+		animate(bannerlis[now],{left:-imgW});
+		animate(bannerlis[next],{left:0},function(){
+			flag = true;
+		});
+		now = next
+	}
+	function moveL(){
+		next--
+		if (next < 0) {
+			next = bannerlis.length;
+		}
+		console.log(next)
+		bannerlis[next].style.left = -imgW+'px';
+		animate(bannerlis[now],{left:imgW});
+		animate(bannerlis[next],{left:0},function(){
+			flag = true;
+		});
+		now = next
+	}
+	/*function move(){
+		num++;
 			if (num==bannerlis.length) {
 				num = 0;
 			}
@@ -43,13 +104,13 @@ window.onload = function(){
 		}
 		bannerlis[num].style.display = 'block';
 		byuanlis[num].style.background = 'rgba(225, 225, 225, 0.5)';
-		num++;
+		
 	}
 	console.log(bannerlis.length)
 	jiantouL.onclick = function(){
 		num = num-1;
 		if (num <= -1) {
-			num = bannerlis.length;
+			num = bannerlis.length-1;
 		}
 		for (let i = 0; i < bannerlis.length; i++) {
 			bannerlis[i].style.display = 'none';
@@ -62,8 +123,8 @@ window.onload = function(){
 	}
 	jiantouR.onclick = function(){
 		num = num+1;
-		if (num <= -1) {
-			num = bannerlis.length;
+		if (num == bannerlis.length) {
+			num = 0;
 		}
 		for (let i = 0; i < bannerlis.length; i++) {
 			bannerlis[i].style.display = 'none';
@@ -90,5 +151,5 @@ window.onload = function(){
 			num = i;
 		}
 		
-	}
+	}*/
 }

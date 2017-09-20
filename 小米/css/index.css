@@ -214,12 +214,19 @@ aside .main{
 	height: 100%;
 	background:red;
 	position: relative;
+	overflow: hidden;
 }
 .banner-box li{
 	width: 100%;
 	height: 100%;
 	background: blue;
 	position: absolute;
+	/* display: none; */
+	left:1226px;
+
+}
+.banner-box li:first-child{
+	left: 0;
 }
 .banner-box li img{
 	width: 100%;
