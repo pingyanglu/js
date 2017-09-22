@@ -496,6 +496,7 @@ aside .main{
 	width: 72px;
 	height: 24px;
 	margin-top: 12px;
+
 }
 .xinpinzuo{
 	width: 36px;
@@ -505,6 +506,7 @@ aside .main{
 	float: left;
 	color: #e0e0e0;
 	border: 1px solid #e0e0e0;
+	cursor: pointer;
 }
 .you{
 	color: #b0b0b0;
@@ -513,6 +515,21 @@ aside .main{
 .danpin{
 	width: 1226px;
 	height: 340px;
+	overflow: hidden;
+	position: relative;
+}
+.danpin ul{
+	width: 2452px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all ease  1s;
+}
+.danpin ul li{
+	width: 10%;
+	overflow: hidden;
+	float: left;
 }
 .dan1{
 	width: 234px;
@@ -521,7 +538,7 @@ aside .main{
 	padding-top: 39px;
 	margin-right: 14px;
 	background: #fafafa;
-	float: left;
+	
 }
 .dan11{
 	width: 160px;
