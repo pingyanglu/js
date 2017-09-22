@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>newmethod</title>
+</head>
+<body>
+	<div class="box">
+		hello
+		<div class="son">这是son
+		<span>这是span</span>
+		</div>
+		<div class="son2">这是son2</div>
+		<p>这是p</p>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		let box = document.querySelector('div')
+		let son = document.querySelector('div.son')
+		let p = box.querySelector('p')
+		console.log(box.childNodes)
+		console.log(children(box))
+		console.log(children2(box))
+		console.log(firstchild(box))
+		console.log(lastchild(box))
+		console.log(son)
+		console.log(next(son,'div'))
+		console.log(next1(p,'p'))
+	}
+	//children 通过if找兄弟标签
+	function children(parent){
+		let newarr = [];
+		let childs = parent.childNodes;
+		childs.forEach(element=>{
+			if (element.nodeType == 1) {
+				newarr.push(element);
+			}
+		})
+		return newarr;
+	}
+	//children2  通过filter找兄弟标签
+	function children2(parent){
+		let newarr = [];
+		let childs = parent.childNodes;
+		let arr = Array.from(childs);
+		newarr = arr.filter(element=>element.nodeType == 1);
+		return newarr;
+	}
+	//利用children选出第一个和最后一个兄弟标签
+	function firstchild(parent){
+		return children(parent)[0];
+	}
+	function lastchild(parent){
+	let child = children(parent)
+	return children(parent)[child.length-1];
+	}
+	//next 寻找下面最近的
+	function next(element,tagname){
+		let parent = element.parentNode;
+		let childs = parent.children;
+		let index = 0;
+		for (let i = 0; i < childs.length; i++) {
+			if (childs[i] == element) {
+				index = i;
+				break;
+			}
+		}
+		let nextAll = Array.from(childs).slice(index+1);
+		for (let i = 0; i < nextAll.length; i++) {
+			if (nextAll[i].nodeName==tagname.toUpperCase()) {
+				return nextAll[i];
+			}
+		}
+		return null;
+	}
+	//默写
+	function next1(element,tagname){
+		let parent = element.parentNode;
+		let child = parent.children;
+		let index = 0;
+		for (let i = 0; i < child.length; i++) {
+			if(element==child[i]){
+				index = i;
+				break
+			}
+		}
+		let nextAll = Array.from(child).slice(index+1);
+		for (let i = 0; i < nextAll.length; i++) {
+			if (nextAll[i].nodeName==tagname.toUpperCase()) {
+				return nextAll[i];
+			}
+		}
+		return null;
+	}
+</script>
+</html>

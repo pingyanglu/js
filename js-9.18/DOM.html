@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		#box{
+			width: 300px;
+			height: 300px;
+			background: #413434;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" class="one"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<script>
+		/*window.innerWidth()//获取宽高
+		document.documentElement.clientWidth//兼容性
+		setInterval(fn, 1000)//时间函数*/
+		document.title = '这是document的标题';
+		document.URL = 'http://www.baidu.com';//不能跳转  只能获取
+		document.bgColor = '#245252';
+		let box = document.getElementById('box');
+		box.style.height = '500px';
+		let divs = document.getElementsByTagName('div');
+		divs[0].style.background = 'green';
+		divs[1].style.background = '#132313';
+		console.log(divs[1]);
+		divs[0].innerText = 'hello'//兼容性问题
+		divs[0].textContent = 'hellogepi'//兼容性问题
+		divs[0].innerHTML = '<h1>zhemeda</h1>'//识别标签对
+		divs[0].id = 'box1';
+		divs[0].className = 'two';
+		divs[0].title = '这是divs[0]的title';
+		console.log(divs[0].id = 'box1');
+		console.log(divs[0].className = 'two');
+		/*img[0].src = 'shuai.png';
+		img[0].title = '这是img的title';*/
+		console.log(getComputedStyle(divs[0],null).width)
+	</script>
+</body>
+</html>

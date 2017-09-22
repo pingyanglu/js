@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lunboyaun</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	main{
+		width: 1226px;
+		height: 400px;
+		background: #135788;
+		margin: 0 auto;
+		position: relative;
+	}
+	.btns{
+		width: 125px;
+		height: 15px;
+		/* background: 	red; */
+		left:0px;
+		right:0px;
+        margin-left:auto;
+        margin-right:auto;
+		position: absolute;
+		bottom: 20px;
+	}
+	.btns li{
+		width: 15px;
+		height: 15px;
+		background: skyblue;
+		border-radius: 50%;
+		margin-right: 10px;
+		float: left;
+		list-style: none;
+		cursor: pointer;
+	}
+	.btns .color{
+		background: #462564;
+	}
+</style>
+<body>
+	<main>
+		<ul class="btns">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</main>	
+	<script>
+		let btns = document.getElementsByClassName('btns');
+		let li = btns[0].getElementsByTagName('li')
+		console.log(li[0])
+		li[0].onclick = function(){
+			li[0].className = 'color';
+		}
+		/*for (var i = 0; i < li.length; i++) {
+			li[i].onclick = function(){
+				li[i].style.background = '#324255';
+			}
+		}*/
+	</script>
+</body>
+</html>

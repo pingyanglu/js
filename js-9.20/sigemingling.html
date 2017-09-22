@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sigemingling</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100px;
+			height: 150px;
+			background: red;
+			position: absolute;
+			/* margin: 10px; */
+			padding: 15px;
+			border: 2px solid #000;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+		<div class="box"></div>
+	<script>
+	window.onload = function(){
+	let box = document.getElementsByClassName('box')[0];
+	let speed = -10;
+	console.log(box.offsetHeight)
+	setInterval(fn, 100)
+	console.log(window.innerHeight)
+	function fn(){
+		console.log(window.innerHeight-box.style.height)
+		console.log(box.style.height)
+        let w = box.offsetTop+speed; 
+		if (w > window.innerHeight-box.offsetHeight) {
+			w = window.innerHeight-box.offsetHeight
+			speed *=-1;
+		}
+		console.log(speed)
+		if (w <= 0) {
+			w = 0
+			speed *=-1;
+		}
+		box.style.top = w+'px' 
+	}	
+		console.log(box.offsetTop)
+	}
+	</script>
+</body>
+</html>

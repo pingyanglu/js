@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calssName</title>
+	<script src='className.js'></script>
+</head>
+<body>
+<div class="box"></div>
+<div id="er">
+	<ul class="box"></ul>
+</div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box box1"></div>
+<div class="box box1"></div>
+<div class="box1"></div>
+<div class="box box1"></div>
+	<script>
+	window.onload=function(){
+		var ers = $('#er')[0];
+		var boxs = $('.box',ers)[0];
+		boxs.innerHTML = 'wqweqweqwe'
+		console.log(boxs)
+		/*var box = getClass('box');
+		console.log(box[2]);
+		for (var i = 0 ; i < box.length; i++){
+			box[i].innerHTML = '这是一个div';
+		}	*/
+		// $('.box').innerText = 'class';
+		// $('#box').innerHTML = 'id';
+	
+		// var box = document.getElementsByClassName('box')[0];
+		// console.log(box)
+
+		
+
+	}
+	</script>
+</body>
+</html>	

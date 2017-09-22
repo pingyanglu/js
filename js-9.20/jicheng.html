@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jicheng</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name = 'zhangsan';
+			this.say = function (){
+				console.log(this);
+			}
+		}
+		function Student(){
+			/*Person.call(this)//把Person全部冒充过来*/
+			this.name = 'lisi';
+			this.classse = 'wuif1707';
+			this.nunm = '1707-1';
+
+		}
+		let zhangsan = new Person;
+		let lisi = new Student;
+		zhangsan.say(1,2);
+		//冒充
+		zhangsan.say.call(lisi,3,4);//第一个参数:冒充对象  第二个参数:方法接受的参数
+		//冒充2
+		zhangsan.say.apply(lisi,[3,4])//区别  第二个参数:数组
+		/*理解:需要让callback中的this不是指到window,而是指到Obj的this;所以吧这个callback冒充给Obj.
+		*/
+	</script>
+</body>
+</html>
