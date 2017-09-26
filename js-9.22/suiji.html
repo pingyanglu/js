@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>suiji</title>
+</head>
+<style>
+	.box{
+		width: 50px;
+		height: 50px;
+		background: skyblue;
+		position: absolute;
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transition: all ease 1s;
+	}
+
+</style>
+<body>
+<!-- 	<div class="box"></div> -->
+	<script>
+
+		for (var i = 0; i < 20; i++) {
+			let divs = document.createElement('div');
+			divs.className = 'box';
+			console.log(window.getComputedStyle(divs,null).left)
+			let lefts = Math.floor((innerWidth-50)*Math.random());
+			let tops = Math.floor((innerHeight-50)*Math.random());
+			let lengths = Math.floor(70*Math.random()+30);
+			let num1 = Math.floor(255*Math.random());
+			let num2 = Math.floor(255*Math.random());
+			let num3 = Math.floor(255*Math.random());
+			let opcity = Math.random();
+			let num = 2*Math.random();
+
+			let deg = (1/10)*Math.PI;
+			deg = deg*i;
+			let R = 200;
+			let left = R*Math.cos(deg)
+			let top = R*Math.sin(deg)
+			// console.log(divs)
+			console.log(divs.style.width/*getComputedStyle(divs,null).width*/)
+			setTimeout(function(){
+			divs.style.transition =  `${num}s`;
+			/*divs.style.left = `${lefts}px`;
+			divs.style.top = `${tops}px`;*/
+			divs.style.left = `${left+0.5*innerWidth}px`;
+			divs.style.top = `${top+0.5*innerHeight}px`;
+			/*divs.style.width = `${lengths}px`;
+			divs.style.height = `${lengths}px`;*/
+			divs.style.background = `rgba(${num1}, ${num3}, ${num2}, ${opcity})`;},5)
+			document.body.appendChild(divs);
+		}
+	</script>
+</body>
+</html>

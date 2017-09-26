@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>newsuiji</title>
+	<style>
+		.pointer{
+			position: relative;
+			left: 50%;
+			top: 50%;
+			width: 50px;
+		height: 50px;
+		background: skyblue;
+		}
+		.box{
+		width: 50px;
+		height: 50px;
+		background: skyblue;
+		position: absolute;
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transition: all ease 1s;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="pointer">
+		<span></span>
+	</div>
+</body>
+<script>
+	let pointer = document.querySelector('div.pointer');
+	// setInterval(l, 1000)  
+	function l (){
+		circle(150,20);
+	}
+	circle(150,10);
+	function circle(R,num){
+		
+		for (let i = 0; i < num; i++) {
+
+			let divs = document.createElement('div');
+			divs.className = 'box';
+			let deg = 2*Math.PI/30;
+			deg = deg * i;
+			console.log(deg)
+			console.log(i)
+			let left = R*Math.cos(deg)
+			let top = R*Math.sin(deg)
+
+			pointer.appendChild(divs);
+			setTimeout(function(){
+				divs.style.transitionDelay = `${100*i}ms`;
+				divs.style.left = `${left}px`;
+				divs.style.top = `${top}px`;
+			},10);
+			// document.removeChild('divsss')
+		}
+		
+	}
+
+	let divs = document.createElement('div');
+			divs.className = 'box';
+			
+	let span = document.querySelector('span')
+	console.log(span)
+	pointer.appendChild(divs)
+
+	pointer.insertBefore(divs,span)	
+	
+//往一个元素的前面插入一个元素
+	/*parent.insertBefore(element,next)*/
+//往一个元素的后面插入一个元素
+	HTMLElement.prototype.inserAfter = function(element,tagname){//element:插入的元素 
+		//tagname 
+		let next = tagname.nextElementSibling;
+		let parent = tagname.parentNode;
+		if (next) {
+			parent.insertBefore(element,next)
+		}else{
+			parent.appendChild(element);
+		}
+	}
+	pointer.inserAfter(divs,span)
+//往父元素的最后面插入一个元素
+	/*pointer.appendChild(divs);*/
+//往父元素的最前面插入一个元素
+	HTMLElement.prototype.prepenChild= function(element){//element:要插入的元素 
+		let first = this.firstChild;
+		/*if (first) {*/
+			this.insertBefore(element,first)
+		/*}else{
+			this.appendChild(element);
+		}*/
+	}
+	pointer.prepenChild(divs);
+//把元素插入到父元素中    原来:给父元素中插入一个元素
+	HTMLElement.prototype.appendToUp = function(element){
+		element.appendChild(this);
+	}
+	HTMLElement.prototype.appendToDown = function(element){
+		element.prepenChild(this);
+	}
+	
+</script>
+</html>

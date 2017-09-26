@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>comment</title>
+	<script src="className.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.content{
+			width: 300px;
+			height: 300px;
+			background: skyblue;
+			border: 2px solid #000;
+		}
+		button{
+			width: 50px;
+			height: 25px;
+			position: relative;
+		}
+		.zishu{
+			width: 50px;
+			height: 25px;
+			position: absolute;
+			left: -50px;
+			bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	
+	<textarea name="" id="" cols="30" rows="10" maxlength="50">
+		
+	</textarea>
+	<button>发表<div class="zishu">0/50</div></button>
+	<div class="content"> </div>
+</body>
+<script>
+	
+	let buts = $('button')[0];
+	let divs = $('.content')[0];
+	let textarea = $('textarea')[0];
+	let zishu = $('.zishu')[0];
+	$(function(){
+		textarea.onkeydown = function(e){
+			// console.log(e.keyCode);
+			if(e.keyCode == 13){
+				let contentt = textarea.value;
+				textarea.value = null;
+				divs.innerHTML= contentt;
+			}
+			let zishuc = textarea.value.length;
+			zishu.innerHTML = zishuc+'/'+'50';
+		}
+		buts.onclick = function(){
+			let contentt = textarea.value;
+			textarea.value = null;
+			divs.innerHTML= contentt;
+		}
+	})
+</script>
+</html>

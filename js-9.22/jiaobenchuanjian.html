@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jiaobenchuanjian</title>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box1"></div>
+	<script>
+		let box = document.querySelector('div.box')
+		let divs = document.createElement('div');
+		divs.style.width = '300px';
+		divs.style.height = '300px';
+		divs.style.background = 'red';
+		box.appendChild(divs);
+
+		let box1 = document.querySelector('div.box1') 
+		let ps = document.createElement('div');
+		ps.style.cssText = `
+		width = 500px;
+		height = 500px;
+		background = green;
+		`;
+		box1.appendChild(ps);
+	</script>
+</body>
+</html>
