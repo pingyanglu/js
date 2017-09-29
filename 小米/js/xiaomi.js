@@ -17,9 +17,9 @@ window.onload = function(){
 	let banneryuan = document.getElementsByClassName('yuan-kuang')[0];
 	let byuanlis = banneryuan.getElementsByTagName('li');
 	let asides = $('aside')[0];
-	console.log(asides)
+	// console.log(asides)
 	let mains = $('.main',asides)[0];
-	console.log(mains)
+	// console.log(mains)
 	let jiantouL = $('.jiantou-left')[0];
 	let jiantouR = $('.jiantou-right')[0];
 	let imgW = parseInt(window.getComputedStyle(bannerBox,null).width);
@@ -50,7 +50,7 @@ window.onload = function(){
 		move()
 		flag = false;
 	}
-	console.log(byuanlis)
+	// console.log(byuanlis)
 	for (let i = 0; i < byuanlis.length; i++) {
 		byuanlis[i].onclick = function(){
 			if(now == i){return}
@@ -92,10 +92,15 @@ window.onload = function(){
 		now = next
 	}
 	let danpinul = document.querySelector('ul.circle');
+	let circleli = document.querySelector('.circle li')
+	console.log(circleli)
 	let xinpinzuo = document.querySelector('div.xinpinzuo');
 	let xinpinyou = xinpinzuo.nextElementSibling; 
-	let d = setInterval(danpin,2000)
+	let d = setInterval(danpin,10000000)
 	let xinpinzuoyou = document.querySelector('div.xinpinzuoyou');
+	let w = parseInt(getComputedStyle(circleli,null).width)*5;
+	// console.log(w)
+	let i = 0;
 	console.log(xinpinzuoyou)
 
 	function danpin(){
@@ -111,22 +116,107 @@ window.onload = function(){
 			xinpinyou.style.color = '#b0b0b0';
 		}
 	} 
-	xinpinzuo.onclick = function(){
-		danpinul.style.left = '0px';
-		xinpinzuo.style.color = '#e0e0e0';
-		xinpinyou.style.color = '#b0b0b0';
-	}
 	xinpinyou.onclick = function(){
-		danpinul.style.left = '-1226px';
-		xinpinyou.style.color = '#e0e0e0';
+		
+		if(i == 3){
+			return
+		}
+		i++;
+		danpinul.style.left = `${-w*i}px`;
+		xinpinyou.style.color = '#b0b0b0';
 		xinpinzuo.style.color = '#b0b0b0';
+		if(i==3){
+			xinpinyou.style.color = '#e0e0e0';
+			xinpinzuo.style.color = '#b0b0b0'
+		}
 	}
+	xinpinzuo.onclick = function(){
+		if(i == 0){
+			return
+			
+		}
+		i--;
+		danpinul.style.left = `${-w*i}px`;
+		xinpinzuo.style.color = '#b0b0b0';
+		xinpinyou.style.color = '#b0b0b0';
+		if(i == 0){
+			xinpinzuo.style.color = '#e0e0e0';
+			xinpinyou.style.color = '#b0b0b0';
+		}
+		
+	}
+
 	xinpinzuoyou.onmousemove=function(){
 		clearInterval(d)
 	}
 	xinpinzuoyou.onmouseout=function(){
-		d = setInterval(danpin,2000)
+		d = setInterval(danpin,10000000)
 	}
+	window.onscroll = function(){
+		console.log(document.documentElement.scrollTop)
+		console.log(document.body.scrollTop)
+	}
+//////////////////////////////////区域加载///////////////////////////////
+	let ch = innerHeight;
+	let floor = document.querySelectorAll('.floor')
+				console.log(floor);
+	let floorArr = [];
+	let btnlefts = document.querySelector('div.pleft')
+	let plefts = btnlefts.querySelectorAll('li');
+	let color = ['red','green','blue','skyblue','pink','#343423','#953454','#953454','#953454'];
+	floor.forEach(element=>{
+		floorArr.push(element.offsetTop)
+	})
+	let weibu = document.querySelector('.weibu')
+	let flag1 = true;
+	let search = document.querySelector('.search')
+	let flag2 = true;
+	plefts.forEach((element,index)=>{
+		element.onclick = function(){
+			for (let i = 0; i < plefts.length; i++) {
+				plefts[i].style.background = 'none';
+			}
+			flag1 = false;
+			element.style.background = color[index];
+			animate(document.body,{scrollTop:floorArr[index]},function(){flag1 = true})
+		}
+		
+	})
+	window.onscroll = function(){
+		if (!flag1) {
+			return;
+		}
+
+		let scrollTop = document.body.scrollTop;
+		if (scrollTop >= 500) {
+			if (flag2) {
+				flag2 = false;
+				console.log(1)
+				search.style.top = 0;
+			}
+		}
+		if (scrollTop <= 500) {
+			if (!flag2) {
+				flag2 = true;
+				console.log(2)
+				search.style.top = '-50px';
+			}
+		}
+		floorArr.forEach((value,index) =>{
+			if (scrollTop+ch>=value){
+				for (let i = 0; i < plefts.length; i++) {
+				plefts[i].style.background = 'none';
+			}
+			plefts[index].style.background = color[index];
+				let imgs = floor[index].getElementsByTagName('img');
+				for (let i = 0; i <imgs.length; i++) {
+					imgs[i].src = imgs[i].getAttribute('zidingyi')
+				}
+			}
+		})
+	}
+
+	// let floor = querySelectorAll()
 	/*function move(){
 		num++;
 			if (num==bannerlis.length) {

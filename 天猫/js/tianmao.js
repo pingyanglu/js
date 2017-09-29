@@ -79,6 +79,50 @@ window.onload = function(){
 		});
 		now = next
 	}
+	let ch = innerHeight;
+	let floor = document.querySelectorAll('.floor')
+				console.log(floor);
+	let floorArr = [];
+	console.log(floorArr)
+	let btnlefts = document.querySelector('div.pleft')
+	let plefts = btnlefts.querySelectorAll('li');
+	let color = ['red','green','blue','skyblue','pink','#343423','#953454','#953454','#953454'];
+	floor.forEach(element=>{
+		floorArr.push(element.offsetTop)
+	})
+	// let weibu = document.querySelector('.weibu')
+	let flag1 = true;
+
+	plefts.forEach((element,index)=>{
+		element.onclick = function(){
+			for (let i = 0; i < plefts.length; i++) {
+				plefts[i].style.background = 'none';
+			}
+			flag1 = false;
+			element.style.background = color[index];
+			animate(document.body,{scrollTop:floorArr[index]},function(){flag1 = true})
+		}
+		
+	})
+	window.onscroll = function(){
+		if (!flag1) {
+			return;
+		}
+		let scrollTop = document.body.scrollTop;
+		floorArr.forEach((value,index) =>{
+			if (scrollTop+ch>=value){
+				for (let i = 0; i < plefts.length; i++) {
+				console.log(floorArr); 
+				plefts[i].style.background = 'none';
+			}
+			plefts[index].style.background = color[index];
+				let imgs = floor[index].getElementsByTagName('img');
+				for (let i = 0; i <imgs.length; i++) {
+					imgs[i].src = imgs[i].getAttribute('zidingyi')
+				}
+			}
+		})
+	}
 }
 // window.onload = function(){
 

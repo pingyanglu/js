@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GameWords</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.char{
+		width: 60px;
+		height: 60px;
+		background: skyblue;
+		border-radius: 5px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
+		line-height: 60px;
+		font-size: 30px;
+	}
+	.stop{
+		width: 100px;
+		height: 45px;
+		background: skyblue;
+		border-radius: 5px;
+		outline: none;
+		border: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.begin{
+		width: 100px;
+		height: 45px;
+		background: skyblue;
+		border-radius: 5px;
+	}
+	.fenshu{
+		width: 100px;
+		height: 45px;
+		background: skyblue;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 25px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	body{
+		position: relative;
+	}
+	img{
+		width: 100%;
+		height: 100%;
+	}
+</style>
+<body>
+<img src="u=2097686932,3306717556&fm=27&gp=0.jpg" alt="">
+<div class="fenshu">0</div>
+<button class="stop">游戏暂停</button>
+<!-- <button class="begin">游戏开始</button> -->
+</body>
+<script>
+	function Game(){
+		this.arr=['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
+		this.speed = 5;
+		this.current=[];
+		this.position=[];
+		this.newarr = [];
+		//创建num个元素
+		this.num = 5;
+		this.k = 1;//游戏结束判断
+		this.gk = 0;//分数
+		var t ;
+	}
+		Game.prototype={
+			star:function(){
+				this.char();
+				this.drop();
+				this.key();
+			},
+			//选数函数
+			char:function(){
+				//选出5个数字		
+				for(let i = 0; i < this.num;i++){
+					this.getchar();
+				};
+			},
+			//选择一个数
+			getchar:function(){
+				//随机一个数字
+				let index = Math.floor(Math.random()*this.arr.length);
+				//this.arr[index]
+				let divs = document.createElement('div');
+				while(this.newarr.includes(this.arr[index])){
+					index = Math.floor(Math.random()*this.arr.length);
+				}
+				divs.innerText = this.arr[index];
+				divs.classList.add('char');
+				//top left 
+				let tops = Math.random()*100;
+				let lefts = (innerWidth-400)*Math.random()+200;
+				
+				while(this.checkPosition(lefts)){
+					lefts = (innerWidth-400)*Math.random()+200;
+					
+				};
+				divs.style.cssText = `top:${tops}px;
+				left:${lefts}px;`;
+				this.newarr.push(this.arr[index]);
+				this.current.push(divs);
+				this.position.push(lefts);
+			
+				document.body.appendChild(divs)
+			},
+			checkPosition:function(lefts){
+				let flag = this.position.some(function(value){
+					
+					return Math.abs(value-lefts)<60 ;
+					
+				})
+				return flag; 
+			},
+			drop:function(){
+				let that = this;
+				this.x = function (){
+					for (let i = 0; i < that.current.length; i++) {
+						let tops = that.current[i].offsetTop+that.speed;
+					that.current[i].style.top = `${tops}px`;
+					if(tops>=500){
+						that.k--;
+						if (that.k<=0) {
+							that.stop();
+							// clearInterval(that.t);
+							return confirm("GAME OVER!");
+							
+						}
+						document.body.removeChild(that.current[i]);
+						that.current.splice(i,1);
+						that.position.splice(i,1);
+						that.newarr.splice(i,1);
+						console.log(that.current)
+						that.getchar();
+					}
+					}
+				}
+				t = setInterval(this.x,100)
+				
+			},
+			key:function(){
+				
+				let that = this;
+				document.onkeydown = function(e){
+					for (let i = 0; i < that.current.length; i++) {
+						if(that.current[i].innerText == String.fromCharCode(e.keyCode)){
+							that.gk+=2;
+							let fenshu = document.querySelector('.fenshu');
+							fenshu.innerHTML = that.gk;
+							document.body.removeChild(that.current[i]);
+							that.current.splice(i,1);
+							that.position.splice(i,1);
+							that.newarr.splice(i,1);
+							that.getchar();
+						}
+						
+						if (that.gk>=10) {
+							 that.next();
+							}
+					}
+				}
+			},
+			next:function(){
+				clearInterval(t);
+				for (let i = 0; i < this.current.length; i++) {
+					document.body.removeChild(this.current[i]);
+				}
+				if (this.num<=12) {
+				// if(this.num)
+				this.current=[];
+				this.position=[];
+				this.newarr = [];
+				//创建num个元素
+				this.k = 1;//游戏结束判断
+				this.gk = 0;//分数
+				this.num+=1;
+				this.star();
+					}else{
+					// if(this.num)
+				this.current=[];
+				this.position=[];
+				this.newarr = [];
+				this.speed+=10;
+				//创建num个元素
+				this.k = 1;//游戏结束判断
+				this.gk = 0;//分数
+				this.star();
+						}
+			},
+			stop:function(){
+				clearInterval(t);
+				// drop();
+			}
+		}
+		let stop = document.querySelector('.stop');
+		// let begin = document.querySelector('.begin');
+
+		
+		var flag1 = true;
+		stop.onclick = function(){
+			if(flag1){
+				flag1 = false;
+				game.stop();
+				stop.innerHTML = '继续游戏';
+			}else{
+				stop.innerHTML = '游戏暂停'
+				flag1 = true; 
+				t = setInterval(game.x,100);
+			}
+		}
+		// begin.onclick=function(){
+		// 	game.drop();
+		// }
+let game = new Game();
+game.star();
+game.key();
+// game.drop();
+</script>
+</html><!-- 
+//不重复   不重叠    下一关   分数 -->

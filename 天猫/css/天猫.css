@@ -1317,5 +1317,21 @@ border: 1px solid #ff0036;
 	display: block;
 	width: 73px;
 	height: 30px;
-
+}
+.pleft{
+	width:30px;
+	height: 150px; 
+	position: fixed;
+	left: 10px;
+	top: 50%;
+	margin-top: -75px;
+	z-index: 999;
+}
+.pleft ul li{
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000;
+	margin-top: -1px;
+	text-align: center;
+	cursor: pointer;
 }
