@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animated</title>
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	ul{
+		overflow: hidden;
+	}
+	li{
+		width: 175px;
+		height: 230px;
+		margin: 20px;
+		box-shadow: 0px 0px 10px 0px;
+		float: left;
+	}
+</style>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<ul>
+		<li class="box">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>
+<script>
+	// $('li:first-of-type').css({background:'red'})
+	$('li').css('background','skyblue').on('mouseenter',function(){
+		console.log(this)
+		console.log($(this))
+		// $(this).animate({height:'+=100'})
+		$(this).css({transform:'scale(1.5,1.5)'})
+	}).on('mouseleave',function(){
+		// $(this).animate({height:'-=100'})
+		$(this).css({transform:'scale(1,1)'})
+		
+	})
+</script>
