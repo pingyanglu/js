@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vegetables</title>
+	<link rel="stylesheet" href="css/vegetable.css">
+	<link rel="stylesheet" href="icon/weixin/iconfont.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/shouye.js"></script>
+</head>
+<style>
+/* html,body {
+	margin:0;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	cursor:none;
+	background:black;
+	background:linear-gradient(to bottom,#000000 0%,#5788fe 100%);
+} */
+.filter {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	cursor:none;
+	left:0;
+	background:#fe5757;
+	animation:colorChange 30s ease-in-out infinite;
+	animation-fill-mode:both;
+	mix-blend-mode:overlay;
+}
+
+@keyframes colorChange {
+	0%,100% {
+	opacity:0;
+}
+50% {
+	opacity:.9;
+}
+}.landscape {
+	position:absolute;
+	bottom:0px;
+	left:0;
+	width:100%;
+	height:100%;
+	/*background-image:url(https://openclipart.org/image/2400px/svg_to_png/250847/Trees-Landscape-Silhouette.png);
+	*/
+background-image:url('http://www.jq22.com/css/img/xkbg.png');
+	background-size:1000px 250px;
+	background-repeat:repeat-x;
+	background-position:center bottom;
+}
+</style>
+<body>
+	<img src="img/bg.jpg" alt="" class="fixbg">
+	<!-- 头部 -->
+	<a href="" name="dingbu"></a>
+	<header>
+		<div class="head">
+			<div class="headbox">
+		        <div class="shangbiao">
+		        <div class="logo"><img src="img/shangbiao.png" alt=""></div></div>
+		        <div class="ulbox">
+		        	<ul>
+		        		<li><a href="vegetables.html"><span>网站首页</span></a></li>
+		        		<li><a class="tiaozhuan" href="#chanpin"><span>公司产品</span></a>
+							<ul class="item">
+								<li>平安WiFi</li>
+								<li>平安优联</li>
+								<li>平安悦行</li>
+								<li>平安随行</li>
+							</ul>
+		        		</li>
+		        		<li><a href="zoujin.html"><span>走进科迅</span></a></li>
+		        		<li><a href="xinwen.html"><span>新闻动态</span></a></li>
+		        		<li><a href="zhaopin.html"><span>人才招聘</span></a></li>
+		        	</ul>
+		        </div>	
+		        <div class="weixin">
+		        	<ul>
+		        		<li><i class="iconfont icon-xinlang"></i></li>
+		        		<li><i class="iconfont icon-weixin"></i></li>
+		        	</ul>
+		        </div>			
+			</div>
+		</div>
+		<div class="landscape"></div>
+		<div class="filter"></div>
+		<div class="yiqie"><p>Connect Every Possibility</p>
+		<p>连接   一切可能</p></div>
+		
+		<canvas id="canvas"></canvas>
+
+		<!-- <img src="img/shouye.jpg" alt=""> -->
+		<!-- <div class="weilai">未来已来</div>
+		<div class="weilai1">享受未来视界</div>
+		<div class="weilai2">体验视界的不同凡响</div> -->
+		<div class="xia">
+			<div><span class="iconfont icon-jiantouxia"></span></div>
+			<div><span class="iconfont icon-jiantouxia"></span></div>
+			<div><span class="iconfont icon-jiantouxia"></span></div>
+		</div>
+	</header>
+	
+	<main>
+		<!-- 公司产品 -->	
+		<a name="chanpin"></a>
+		<div class="gongsi-box floor">
+			<div class="kongbai"></div>
+			<div class="biaoti">
+				<div><b>公司产品</b></div>
+				<span>Products</span>
+				<span><img src="img/biaotixia.png" alt=""></span>
+			</div>
+			<div class="kongbai2"></div>
+			<ul class="gsul">
+				<li><a href="">
+				<div>
+					<div class="gstop"><img src="img/li1.png" alt=""></div>
+					<div class="gsmid">
+						<p>平安WiFi</p>
+						<p><img src="img/biaotixia.png" alt=""></p>
+						<p>全球免费连</p>
+					</div>
+					<div class="gsbot">+</div>
+					<!-- <div></div>
+					<span class="chanpinjieshao">身临其境</span> -->
+				</div>
+				</a></li>
+				<li><a href="">
+				<div>
+					<div class="gstop"><img src="img/li2.png" alt=""></div>
+					<div class="gsmid">
+						<p>平安优联</p>
+						<p><img src="img/biaotixia.png" alt=""></p>
+						<p>让连接更简单</p>
+					</div>
+					<div class="gsbot">+</div>
+					<!-- <div></div>
+					<span class="chanpinjieshao">全方位立体感</span> -->
+				</div></a></li>
+				<li><a href="">
+				<div>
+					<div class="gstop"><img src="img/li3.png" alt=""></div>
+					<div class="gsmid">
+						<p>平安悦行</p>
+						<p><img src="img/biaotixia.png" alt=""></p>
+						<p>悦行 悦享生活</p>
+					</div>
+					<div class="gsbot">+</div>
+					<!-- <div></div>
+					<span class="chanpinjieshao">虚拟世界触手可及</span> -->
+				</div></a></li>
+				<li><a href="">
+				<div>
+					<div class="gstop"><img src="img/li4.png" alt=""></div>
+					<div class="gsmid">
+						<p>平安随行FiMi</p>
+						<p><img src="img/biaotixia.png" alt=""></p>
+						<p>平安随行 畅连无线</p>
+					</div>
+					<div class="gsbot">+</div>
+					<!-- <div></div>
+					<span class="chanpinjieshao">超凡视界</span> -->
+				</div></a></li>
+			</ul>
+			<div class="xia lan">
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+			</div>
+		</div>
+		<!-- 走进迅科 -->
+		<div class="zoujin floor">
+			<div class="kongbai"></div>
+			<div class="biaoti">
+				<div><b>走进迅科</b></div>
+				<span>About Us</span>
+				<span><img src="img/biaotixia.png" alt=""></span>
+			</div>
+			<div class="word">
+				<span class="word1">深圳平安讯科技术有限公司，前身为中国平安集团内部孵化的互联网项目， 2017年3月1日获得光启集团5.5亿元融资，并正式独立为平安集团控股公司。</span>
+				<span class="word2">Shenzhen Ping An Xunke Technology Co., Ltd is officially established on March 1st, 2017 and is now a holding company of China Ping An Group. Our internet project was incubated by the parent company, China Ping An Group and successfully received 550 million financing from Kuang-Chi Group.
+				</span>
+			</div>
+			<div class="more"><a href="zoujin.html">更多</a></div>
+			<div class="xia">
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+			</div>
+		</div>
+		<!-- 新闻动态 -->	
+		<div class="xinwen floor">
+			<div class="kongbai"></div>
+			<div class="biaoti">
+				<div><b>新闻资讯</b></div>
+				<span>News And Information</span>
+				<span><img src="img/biaotixia.png" alt=""></span>
+			</div>
+			<ul>
+				<li>
+					<div class="litop"><img src="img/3-1.jpg" alt="">
+						<span class="iconfont icon-sanjiao1"></span>
+					</div>
+					<div class="libottom">
+						<p>平安WiFi获5.5亿元融资 联合光启集团成立平安讯科</p>
+						<div>
+							<p>中国平安旗下的平安WiFi宣布获得光启集团5.5亿元投资。双方联合成立了深圳平安讯科技术有限公司</p>
+							<div class="gengduo"><a href="sanji.html">更多</a></div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="libottom">
+						<p>首个WiFi产业基金成立 平安讯科投入1亿资金</p>
+						<div>
+							<p>2017年7月13日下午，第一届“智能WiFi网络应用产业联盟”线下沙龙在深圳成功召开。</p>
+							<div class="gengduo"><a href="sanji.html">更多</a></div>
+						</div>
+					</div>
+					<div class="litop"><img src="img/3-2.jpg" alt="">
+						<span class="iconfont icon-sanjiao"></span>
+					</div>
+					
+				</li>
+				<li>
+					<div class="litop">
+						<span class="iconfont icon-sanjiao1"></span>
+					<img src="img/3-3.jpg" alt=""></div>
+					<div class="libottom">
+						<p>“通讯+金融”： 平安WiFi探索盈利方向</p>
+						<div>
+							<p> “行业说WiFi是站在互联网风口却没有飞起来的猪，对这句话我不完全认同”，日前，平安讯科董事长戎国强表示</p>
+							<div class="gengduo"><a href="sanji.html">更多</a></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="xia lan">
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+				<div><span class="iconfont icon-jiantouxia"></span></div>
+			</div>
+		</div>	
+	</main>
+	<!-- 底部 -->
+	<bottom class='floor'>
+		<div class="dibukong"></div>
+		<div class="neirong">
+			<div class="lianxi">
+				<p>联系我们</p>
+				<p>CONTACT</p>
+			</div>
+			<div class="guanzhu">
+				<div class="word">关注</div>
+				<i class="iconfont icon-xinlang"></i>
+				<i class="iconfont icon-weixin"></i>
+			</div>
+			<div class="dizhi">
+				<span>深圳平安迅科技术有限公司</span>
+				<span>电话:400-8299-309</span>
+				<span>深圳：南山区高新园科发路2号朗峰大厦5楼</span>
+				<span>上海：浦东新区崂山路316号</span>
+			</div>
+		</div>
+		<div class="xiahengxian"></div>
+		<div class="dibudi">COPYRIGHT (©) 2017 深圳平安讯科技术有限公司 .</div>
+	</bottom>
+	<div class="dingbu"><a href="#dingbu"><img src="img/huojian.png" alt=""></a></div>
+</body>
+</html>
+<!-- <script>
+	function Star(id, x, y){
+		this.id = id;
+		this.x = x;
+		this.y = y;
+		this.r = Math.floor(Math.random()*2)+1;
+		var alpha = (Math.floor(Math.random()*10)+1)/10/2;
+		this.color = "rgba(255,255,255,"+alpha+")";
+	}
+	
+	Star.prototype.draw = function() {
+		ctx.fillStyle = this.color;
+		ctx.shadowBlur = this.r * 2;
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+		ctx.closePath();
+		ctx.fill();
+	}
+	
+	Star.prototype.move = function() {
+		this.y -= .15;
+		if (this.y <= -10) this.y = HEIGHT + 10;
+		this.draw();
+	}
+	
+	Star.prototype.die = function() {
+	    stars[this.id] = null;
+	    delete stars[this.id];
+	}
+	
+	
+	function Dot(id, x, y, r) {
+		this.id = id;
+		this.x = x;
+		this.y = y;
+		this.r = Math.floor(Math.random()*5)+1;
+		this.maxLinks = 2;
+		this.speed = .5;
+		this.a = .5;
+		this.aReduction = .005;
+		this.color = "rgba(255,255,255,"+this.a+")";
+		this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+	
+		this.dir = Math.floor(Math.random()*140)+200;
+	}
+	
+	Dot.prototype.draw = function() {
+		ctx.fillStyle = this.color;
+		ctx.shadowBlur = this.r * 2;
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+		ctx.closePath();
+		ctx.fill();
+	}
+	
+	Dot.prototype.link = function() {
+		if (this.id == 0) return;
+		var previousDot1 = getPreviousDot(this.id, 1);
+		var previousDot2 = getPreviousDot(this.id, 2);
+		var previousDot3 = getPreviousDot(this.id, 3);
+		if (!previousDot1) return;
+		ctx.strokeStyle = this.linkColor;
+		ctx.moveTo(previousDot1.x, previousDot1.y);
+		ctx.beginPath();
+		ctx.lineTo(this.x, this.y);
+		if (previousDot2 != false) ctx.lineTo(previousDot2.x, previousDot2.y);
+		if (previousDot3 != false) ctx.lineTo(previousDot3.x, previousDot3.y);
+		ctx.stroke();
+		ctx.closePath();
+	}
+	
+	function getPreviousDot(id, stepback) {
+		if (id == 0 || id - stepback < 0) return false;
+		if (typeof dots[id - stepback] != "undefined") return dots[id - stepback];
+		else return false;//getPreviousDot(id - stepback);
+	}
+	
+	Dot.prototype.move = function() {
+		this.a -= this.aReduction;
+		if (this.a <= 0) {
+			this.die();
+			return
+		}
+		this.color = "rgba(255,255,255,"+this.a+")";
+		this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+		this.x = this.x + Math.cos(degToRad(this.dir))*this.speed,
+		this.y = this.y + Math.sin(degToRad(this.dir))*this.speed;
+	
+		this.draw();
+		this.link();
+	}
+	
+	Dot.prototype.die = function() {
+	    dots[this.id] = null;
+	    delete dots[this.id];
+	}
+	
+	
+	var canvas  = document.getElementById('canvas'),
+		ctx = canvas.getContext('2d'),
+		WIDTH,
+		HEIGHT,
+		mouseMoving = false,
+		mouseMoveChecker,
+		mouseX,
+		mouseY,
+		stars = [],
+		initStarsPopulation = 80,
+		dots = [],
+		dotsMinDist = 2,
+		maxDistFromCursor = 50;
+	
+	setCanvasSize();
+	init();
+	
+	function setCanvasSize() {
+		WIDTH = document.documentElement.clientWidth,
+	    HEIGHT = document.documentElement.clientHeight;                      
+	
+		canvas.setAttribute("width", WIDTH);
+		canvas.setAttribute("height", HEIGHT);
+	}
+	
+	function init() {
+		ctx.strokeStyle = "white";
+		ctx.shadowColor = "white";
+		for (var i = 0; i < initStarsPopulation; i++) {
+			stars[i] = new Star(i, Math.floor(Math.random()*WIDTH), Math.floor(Math.	random()*HEIGHT));
+			//stars[i].draw();
+		}
+		ctx.shadowBlur = 0;
+		animate();
+	}
+	
+	function animate() {
+	    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+	
+	    for (var i in stars) {
+	    	stars[i].move();
+	    }
+	    for (var i in dots) {
+	    	dots[i].move();
+	    }
+	    drawIfMouseMoving();
+	    requestAnimationFrame(animate);
+	}
+	
+	window.onmousemove = function(e){
+		mouseMoving = true;
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+		clearInterval(mouseMoveChecker);
+		mouseMoveChecker = setTimeout(function() {
+			mouseMoving = false;
+		}, 100);
+	}
+	
+	
+	function drawIfMouseMoving(){
+		if (!mouseMoving) return;
+	
+		if (dots.length == 0) {
+			dots[0] = new Dot(0, mouseX, mouseY);
+			dots[0].draw();
+			return;
+		}
+	
+		var previousDot = getPreviousDot(dots.length, 1);
+		var prevX = previousDot.x; 
+		var prevY = previousDot.y; 
+	
+		var diffX = Math.abs(prevX - mouseX);
+		var diffY = Math.abs(prevY - mouseY);
+	
+		if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+	
+		var xVariation = Math.random() > .5 ? -1 : 1;
+		xVariation = xVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+		var yVariation = Math.random() > .5 ? -1 : 1;
+		yVariation = yVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+		dots[dots.length] = new Dot(dots.length, mouseX+xVariation, mouseY+yVariation	);
+		dots[dots.length-1].draw();
+		dots[dots.length-1].link();
+	}
+	//setInterval(drawIfMouseMoving, 17);
+	
+	function degToRad(deg) {
+		return deg * (Math.PI / 180);
+	}
+</script> -->

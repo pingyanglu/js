@@ -1,0 +1,284 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	font-family: sans-serif;
+	color: #000;
+}
+/* 固定背景 */
+.fixbg{
+	width: 100%;
+	height: 750px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+header{
+	width: 100%;
+	height: 645px;
+	background-color: rgba(50, 92, 199, 0.8);
+	/* background: red; */
+	position: relative;
+	overflow: hidden;
+}
+.head{
+	width: 100%;
+	height: 69px;
+	/* background: #335DC7; */
+	padding-top: 2px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9;
+}
+.headbox{
+	width: 1200px;
+	height: 57px;
+	/* background: yellow; */
+	margin: 0 auto;
+}
+.shangbiao{
+	width: 399px;
+	height: 57px;
+	text-align: center;
+	line-height: 57px;
+	/* background: red; */
+	float: left;
+}
+.shangbiao .logo{
+	width: 146px;
+	height: 40px;
+	padding: 15px;
+}
+header img{
+	width: 100%;
+	height: 100%;
+}
+.headbox>.ulbox{
+	width: 620px;
+	height: 57px;
+
+	/* background: #657890; */
+	float:left;
+}
+.headbox>.ulbox>ul{
+	width: 100%;
+	height: 100%;
+
+}
+.headbox>.ulbox>ul>li{
+	width: 20%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 57px;
+	
+}
+.headbox>.ulbox>ul>li span{
+	color: #fff;
+}
+.weixin{
+	float: left;
+	height: 57px;
+	/* background: red; */
+}
+.weixin>ul>li{
+	float: left;
+	line-height: 57px;
+	margin-left: 35px;
+}
+.weixin .iconfont{
+	color: #fff;
+	font-size: 20px;
+}
+header p{
+	text-align: center;
+}
+header p:nth-of-type(1){
+	font-size: 48px;
+	color: #fff;
+	margin-top: 200px;
+}
+header p:nth-of-type(2){
+	font-size: 30px;
+	color: #fff;
+}
+.item{
+	display: none;
+}
+.item>li{
+	width: 100%;
+	height: 25px;
+	font-size: 14px;
+	line-height: 25px;
+	/* background: rgb(51, 93, 199); */
+	color: #fff;
+	text-align: center;
+}
+/* 招聘岗位 */
+.jieshao{	
+	width: 100%;
+	/* height: 800px; */
+	background: #fff;
+}
+.kongbai{
+	height: 70px;
+}
+.biaoti{
+	width: 1200px;
+	height: 88px;
+	/* background: red; */
+	margin:0 auto ;
+	text-align: center;
+}
+.biaoti>div{
+	font-size: 24px;
+}
+.biaoti>span:nth-of-type(1){
+	display: block;
+	color: #AAAADB;
+	line-height: 14px;
+	margin: 8px auto;
+}
+.biaoti>span>img{
+	width: 45px;
+	height: 2px;
+	margin-bottom: 10px;
+}
+.kongbai2{
+	height: 60px;
+}
+.kongbai6{
+	height: 20px;
+}
+.gangwei{
+	width: 1200px;
+	height: 42px;
+	margin: 0 auto;
+	font-size: 14px;
+	line-height:42px; 
+}
+.gangwei>ul>li{
+	background: rgb(73, 109, 217);;
+	display: inline-block;
+	padding: 0px 10px;
+	color: #fff;
+}
+.yaoqiu{
+	width: 1200px;
+	margin: 0 auto;
+}
+.yaoqiu p{
+	font-size: 14px;
+    color: #565A5A;
+    line-height: 25px;
+}
+.xuxian{
+	width: 1200px;
+	height: 60px;
+	margin: 0 auto;
+	border-bottom: 1px dashed rgb(153, 153, 153);
+}
+.youxiang{
+	width: 1200px;
+	margin: 0 auto;
+	font-size: 14px;
+    color: #565A5A;
+    line-height: 25px;
+}
+.youxiang span{
+	font-size: 24px;
+    color: #565A5A;
+    line-height: 25px;
+}
+/* 底部 */
+bottom{
+	display: block;
+	width: 100%;
+	height: 370px;
+	background: #2C2E32;
+}
+.dibukong{
+	height: 60px;
+}
+.neirong{
+	width: 1200px;
+	height: 206px;
+	/* background: red; */
+	margin: 0 auto;
+}
+.lianxi{
+	width: 400px;
+	height: 75px;
+	float: left;
+	/* background:blue;  */
+	/* text-align: center; */
+	font-size: 24px;  
+}
+.lianxi p{
+	color: rgb(255, 255, 255);
+}
+.lianxi p:last-child{
+	font-size: 14px;
+	margin-top: 20px;
+}
+.guanzhu{
+	width: 400px;
+	height: 86px;
+	float: left;
+	/* background:yellow;  */
+}
+.guanzhu .word{
+	font-size: 18px;
+	color: #fff;
+}
+.guanzhu i{
+	float: left;
+	display: block;
+	font-size: 25px;
+	color: #fff;
+	margin-right: 10px;
+	padding-top: 30px;
+}
+.dizhi{
+	width: 400px;
+	height: 206px;
+	float: left;
+	/* background:green;  */
+}
+.dizhi span{
+	display: block;
+	color: #fff;
+}
+.dizhi span:first-child{
+	font-size: 18px;
+	margin-bottom: 35px;
+}
+.dizhi span:nth-of-type(n+2){
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.xiahengxian{
+	width: 1200px;
+	height: 58px;
+	/* background: green; */
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(204, 204, 204, 0.46);
+}
+.dibudi{
+	text-align: center;
+	font-size: 14px;
+	margin-top: 10px;
+	color: #fff;
+}
+.dingbu{
+	width: 34px;
+	height: 34px;
+	background: #888888;
+	position: fixed;
+	bottom: 20px;
+	right: 15px;
+	display: none;
+}
